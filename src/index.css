@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest: #163b0c;
+  --color-forest-soft: #1f4d12;
+  --color-forest-deep: #0f2a08;
+  --color-cream: #f7f7f1;
+  --color-cream-dim: #ece9dd;
+  --color-lime: #9ab525;
+  --color-lime-deep: #7c9420;
+  --color-charcoal: #232821;
+  --color-steel: #6b7268;
+
+  --font-display: "Archivo Expanded", "Archivo", sans-serif;
+  --font-head: "Archivo", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+html {
+  background: var(--color-forest);
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-cream);
+  color: var(--color-charcoal);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-lime);
+  color: var(--color-forest-deep);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+.font-head {
+  font-family: var(--font-head);
+}
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--color-cream); }
+::-webkit-scrollbar-thumb { background: var(--color-forest); border-radius: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--color-lime);
+  outline-offset: 3px;
+}
